@@ -1,7 +1,17 @@
 import networkx as nx
 import matplotlib.pyplot as plt
 
-def plot_graph(segments):
+def plot_graph(segments, title=None):
+    """
+    Plots a graph provided as 
+
+square = (
+    ((1, 1), (1, 2)),
+    ((1, 2), (2, 2)),
+    ((2, 2), (2, 1)),
+    ((2, 1), (1, 1)),
+)
+    """
     # Build an undirected graph ----------------------------------------------
     G = nx.Graph()
     G.add_edges_from(segments)          # endpoints become nodes, tuples are edges
@@ -25,5 +35,6 @@ def plot_graph(segments):
     )
     
     plt.gca().set_aspect("equal")
-    plt.title("As a graph in NetworkX")
+    if title:
+        plt.title(title)
     plt.show()
