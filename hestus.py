@@ -187,7 +187,7 @@ def find_intersections(G):
         for f in G.edges():
             # avoid the same vertex
             if e!=f:
-                inter=find_intersection(e,f)
+                inter=find_intersecting_point(e,f)
                 if None not in inter:
                     intersections.add(inter)
 
