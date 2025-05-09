@@ -102,7 +102,7 @@ def find_intersecting_point(l1, l2):
 
 def are_parallel(l1, l2, tol=1e-9):
     """
-    Return True if the (infinite) lines defined by the two point pairs are parallel.
+    Return True if lines l1 and l2 defined by the two point pairs are parallel.
     """
     (x1, y1), (x2, y2) = l1
     (x3, y3), (x4, y4) = l2
@@ -133,6 +133,9 @@ def are_parallel(l1, l2, tol=1e-9):
 # +--------------------------------------------------+
 
 
+# Find intersections
+# ===================
+
 def find_intersections(G):
     """
     This finds all intersecting points in the graph, resulting from lines which
@@ -152,4 +155,26 @@ def find_intersections(G):
 
     return intersections
 
+# Segmentation
+# ==============
 
+def del_nonparallel():
+    """
+    Discard all lines which are not parallel to any existing ones in the graph.
+    Result is a list of edges to delete from the graph.
+    """
+    # set with connections between nodes
+    to_delete=set()
+
+    for fg in FG.edges():
+        # if the fg line under consideration is parallel to any pre-existing line, keep it with survive=True
+        survive=False
+        for g in G.edges():
+            if fg!=g:
+                if are_parallel(g, fg):
+                    survive=True
+
+        if not survive:
+            to_delete.add(fg)
+
+    return to_delete
