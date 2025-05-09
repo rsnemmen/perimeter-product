@@ -36,11 +36,11 @@ FG = nx.complete_graph(intersections)   # undirected by default
 
 # (2a) Delete spurious edges
 to_delete=h.del_nonparallel(FG, G) # this is a list of edges to remove
-FG.remove_edges_from(to_delete)
+if not to_delete: FG.remove_edges_from(to_delete)
 
 # (2b) Delete edges crossing more than 2 nodes
 to_delete=h.del_long_segments(FG) # again another list of edges to delete
-FG.remove_edges_from(to_delete)
+if not to_delete: FG.remove_edges_from(to_delete)
 
 # (3) Identify smaller shapes with a built-in cycle-finder algorithm (reuse 
 # things that work well!)
