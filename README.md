@@ -9,17 +9,41 @@ Tech stack:
 - Jupyter for prototyping
 - `networkx` for handling graphs
 
+## How to run
+
+(1) Open jupyter notebook or jupyter lab:
+
+    jupyter lab
+
+in your computer.
+
+(2) Open notebook `main.ipynb`. Or click in the corresponding file in the github repo. This will not allow, however, to change the geometrical shape.
+
+(3) Specify the desired geometrical shape in cell 8, 
+
+    shape=window
+
+To test the edge case, change it to `shape=mystery`. However, be warned that it fails the edge case. More about this below.
+
 ## Algorithm outline
 
-When looking at
-Our eyes immediately realize the intersections between lines and the geometrical "subshapes" they form, but the computer has no idea about them. We need to use geometry to teach the computer to identify these shapes. There are three basic steps.
+When looking at a geometrical shape, our eyes immediately realize the intersections between lines and the geometrical "subshapes" they form. However, the computer has no idea about the potential intrincate closed shapes. We need to use geometry to teach the machine to identify these shapes. 
 
-1. Find intersections between lines✅
-2. Establish new edges in addition to those of the original shape✅
-3. Identify closed regions✅
+Here are the three basic steps in my algorithm to solve the problem:
 
-Below I will break down steps 1 to 3.
+1. **Find intersections**: first we find the intersecting points between the lines that define the input geometrical figure. This is essential to build up the subshapes for later processing.
+2. **Define new segments**: we establish new edges (already using graph language) in addition to those of the original shape.
+3. **Identify closed regions**: we use well-established graph algorithms to find cycles with the information we gathered in steps 1 and 2.
 
+Underpinning the approach is the heavy use of graphs via the `networkx` python library.
+
+This approach finds the correct answer for the simple shapes provided: square, hourglass and window. However, it fails for the edge case provided. More about this in the "edge case" section below. 
+
+## Edge case
+
+My approach fails to get an answer for the complicated "mystery" shape provided in the exercise. 
+
+My suspicion for the cause of the failure is related to how it gets the intersections. 
 
 
 ## Problem statement
