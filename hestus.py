@@ -241,6 +241,8 @@ def del_long_segments(FG):
         if not survive:
             to_delete.add(edge)
 
+    return to_delete
+
 
 
 def final_answer(cycles):
