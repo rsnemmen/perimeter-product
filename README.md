@@ -115,6 +115,10 @@ Please find the multiplicative perimeter product for the following points:
 ((1.2, 1.2), (1.8, 1.5)), )
 ```
 
+<p align="center">
+  <img src="figures/mystery.png" alt="Window" width="50%" />
+</p>
+
 ### Algorithm outline
 
 When looking at a geometrical shape, our eyes immediately realize the intersections between lines and the geometrical "subshapes" they form. However, the computer has no idea about the potential intrincate closed shapes. We need to use geometry to teach the machine to identify these shapes. 
