@@ -69,6 +69,10 @@ For a stranger shape, we draw an hourglass shape:
 ((2, 2), (1, 1)), )
 ```
 
+<p align="center">
+  <img src="figures/hourglass.png" alt="Window" width="50%" />
+</p>
+
 Note: There are two areas, but we do not explicitly write the intersection point at the neck of the hourglass.
 
 Each individual triangle has a perimeter of ~2.4142 or ( 1+sqrt(2) ), so the product of all perimeters is 5.82842 or (3 + 2 * sqrt(2)). Note, we expect the floating point solution, not the exact values. They are there just for illustrative purposes.
@@ -83,6 +87,11 @@ For a more complex shape, we draw a window:
 ((1.5, 1), (1.5, 2)),
 ((1, 1.5), (2, 1.5)), )
 ```
+
+<p align="center">
+  <img src="figures/window.png" alt="Window" width="50%" />
+</p>
+
 
 In this example there are 4 areas each with a perimeter of 2. Making the final answer 16.
 
