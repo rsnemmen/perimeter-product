@@ -9,7 +9,7 @@ This is my shot at solving the perimeter product problem, having spent some hour
 ├── 📄 README.md: this README
 ├── 📄 main.py: my (failed) attempt at producing a standalone python code. Need more work on 
 │      hestus.py
-├── 📄 hestus.py: module with helper functions for plotting, geometry etc
+├── 📄 hestus.py: helper functions for plotting, geometry etc
 └── 📄 prototyping.ipynb: jupyter notebook showing the prototyping that led to the first
        attempt at a solution. Lots of plots there.
 ```
